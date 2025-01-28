@@ -1,2 +1,47 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# Auto detect text files and perform LF normalization
+* text=auto
+
+while True:
+    try:
+        # Entrada dos números
+        num = float(input("Digite o primeiro número: "))
+        num2 = float(input("Digite o segundo número: "))
+
+        # Menu de opções
+        print("\nEscolha a operação desejada:")
+        print("1 - Adição")
+        print("2 - Subtração")
+        print("3 - Multiplicação")
+        print("4 - Divisão")
+        print("5 - Potência")
+        escolha = input("Digite o número correspondente à operação: ")
+
+        # Operações matemáticas
+        if escolha == "1":
+            print(f"Resultado da adição: {num + num2}")
+        elif escolha == "2":
+            print(f"Resultado da subtração: {num - num2}")
+        elif escolha == "3":
+            print(f"Resultado da multiplicação: {num * num2}")
+        elif escolha == "4":
+            if num2 == 0:
+                print("Erro! Divisão por zero. Tente novamente.")
+                continue
+            else:
+                print(f"Resultado da divisão: {num / num2}")
+        elif escolha == "5":
+            print(f"Resultado da potência: {num ** num2}")
+        else:
+            print("Opção inválida! Tente novamente.")
+            continue  # Reinicia o loop para pedir novamente
+
+    except ValueError:
+        print("Erro! Por favor, insira números válidos.")
+
+    # Opção de saída
+    sair = input("\nDigite 'sair' para encerrar ou qualquer outra tecla para continuar: ").strip().lower()
+    if sair == "sair":
+        print("Saindo da calculadora...")
+        break
